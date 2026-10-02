@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASAL — Zarafshon ari boqish xo'jaligi</title>
+<meta name="description" content="Zarafshon vodiysidan tabiiy asal: paxta, yantoq, tog' va akatsiya asali.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a href="#top" class="logo">ASAL</a>
+  <nav>
+    <a href="#turlar">Asal turlari</a>
+    <a href="#yol">Banka yo'li</a>
+    <a href="#hisob">Hisoblagich</a>
+    <a href="#aloqa">Buyurtma</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="comb" aria-hidden="true"></canvas>
+  <div class="hero-text">
+    <h1>Tomchi-tomchi,<br>uyadan bankagacha.</h1>
+    <p>Zarafshon vodiysidagi 140 ta oilada ari boqamiz. Asal filtrlanmaydi, qizdirilmaydi — qanday yig'ilsa, shunday bankaga quyiladi.</p>
+    <a class="btn" href="#aloqa">Buyurtma berish</a>
+    <p class="hint">Sichqoncha (yoki barmoq) bilan chuqurchalar ustida yuring — ular asalga to'ladi.</p>
+  </div>
+</section>
+
+<section id="turlar" class="wrap">
+  <h2>Asal turlari</h2>
+  <p class="lead">Rangi va mazasi ari qaysi gulga qo'nganiga bog'liq. Mavsumni tanlab ko'ring.</p>
+  <div class="chips" role="group" aria-label="Mavsum bo'yicha filtr">
+    <button class="chip on" data-f="all">Hammasi</button>
+    <button class="chip" data-f="bahor">Bahor</button>
+    <button class="chip" data-f="yoz">Yoz</button>
+    <button class="chip" data-f="kuz">Kuz</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="yol" class="wrap path">
+  <div class="jar-col">
+    <div class="jar" aria-hidden="true"><div class="fill" id="fill"></div><span id="pct">0%</span></div>
+  </div>
+  <div class="steps">
+    <h2>Bir banka asal yo'li</h2>
+    <ol>
+      <li data-p="20"><b>Gul.</b> Ari bir sayohatda 50–100 ta gulga qo'nadi va shira yig'adi.</li>
+      <li data-p="40"><b>Uya.</b> Shira ichki ari qo'liga o'tadi, ular uni xonalarda quritadi.</li>
+      <li data-p="60"><b>Mum qopqoq.</b> Asal pishgach, ari xonani mum bilan yopadi.</li>
+      <li data-p="80"><b>Ramka.</b> Biz faqat yopilgan ramkalarni olamiz, qolganini arilarga qoldiramiz.</li>
+      <li data-p="100"><b>Banka.</b> Sentrifugadan o'tib, to'g'ridan-to'g'ri shisha bankaga quyiladi.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="hisob" class="wrap calc">
+  <h2>Hosil hisoblagichi</h2>
+  <p class="lead">Boshlovchi ari boquvchilar uchun taxminiy hisob: uyalar soni va mavsum davomiyligi.</p>
+  <div class="calc-box">
+    <label>Ari oilalari: <output id="o1">10</output>
+      <input type="range" id="hives" min="1" max="100" value="10"></label>
+    <label>Gullash oylari: <output id="o2">4</output>
+      <input type="range" id="months" min="1" max="7" value="4"></label>
+    <label>Hudud
+      <select id="region">
+        <option value="1.0">Vodiy (tekislik)</option>
+        <option value="0.8">Cho'l chekkasi</option>
+        <option value="1.25">Tog' etagi</option>
+      </select></label>
+    <div class="result"><strong id="kg">0</strong> kg asal <small id="jars"></small></div>
+  </div>
+</section>
+
+<section id="aloqa" class="wrap contact">
+  <h2>Buyurtma</h2>
+  <form id="form" novalidate>
+    <label>Ismingiz<input name="name" autocomplete="name" required minlength="2"><em></em></label>
+    <label>Telefon<input name="phone" inputmode="tel" placeholder="+998 90 123 45 67" required><em></em></label>
+    <label>Asal turi
+      <select name="type" id="typeSel"></select><em></em></label>
+    <label>Bankalar soni<input name="qty" type="number" min="1" max="50" value="2" required><em></em></label>
+    <button class="btn" type="submit">Buyurtmani yuborish</button>
+    <p id="ok" role="status"></p>
+  </form>
+</section>
+
+<footer>© 2026 ASAL ari boqish xo'jaligi. Hosil — Zarafshon vodiysi.</footer>
+<script src="script.js"></script>
+</body>
+</html>
